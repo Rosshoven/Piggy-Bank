@@ -53,8 +53,8 @@ function BasicForm() {
         <div className='card form-control relative' style={{ borderSizing: 'border-box', backgroundColor: 'lightblue', position: 'static' }}>
             <form onSubmit={handleSubmit} autoComplete="off">
 
-                <div className="card-body" style={{ borderRadius: '3%', width: '18rem', marginRight: 'auto', marginLeft: 'auto', marginTop: '10%', backgroundColor: 'gray' }}>
-                    <h2 style={{ marginRight: 'auto', marginLeft: 'auto', marginTop: '2%', padding: '2%', backgroundColor: 'lightblue' }}>Create Account</h2>
+                <div className="card-body" style={{ borderRadius: '5px', width: '18rem', marginRight: 'auto', marginLeft: 'auto', marginTop: '10%', backgroundColor: 'gray' }}>
+                    <h2 style={{ marginRight: 'auto', marginLeft: 'auto', marginTop: '2%', padding: '2%', backgroundColor: 'pink', borderRadius: '20px' }}>Create Account</h2>
                     <hr />
                     {/* ADD IMAGE    <img src="..." class="card-img-top" alt="..." /> */}
                     <div className="card-body">
@@ -118,7 +118,7 @@ function BasicForm() {
                 <div className="card w-50" style={{marginTop: '20%', marginRight: 'auto', marginLeft: 'auto', backgroundColor: 'pink'}}>
                     <div className="card-body">
                         <h5 className="card-title">Success! Your account has been created.</h5>
-                        <p className="card-text">What's better than a bank account with us? How about another bank account with us?! Give us all your money!</p>
+                        <p className="card-text">What's better than a bank account with us?...How about another bank account with us? Piggy is hungry!</p>
                         <button type="submit" className="btn btn-success" onClick={() => setShow(true)}>Add another account</button>
                     </div>
                     </div>

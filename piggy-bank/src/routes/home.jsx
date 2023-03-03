@@ -4,7 +4,7 @@ import home_piggy from '../images/home_piggy.jpg';
 export default function Home() {
     return (
         < div style={{backgroundColor: 'lightblue', padding: '1%'}}>
-            <div className="card" style={{width: '20rem', marginRight: 'auto', marginLeft: 'auto', marginTop: '10%', border: 'solid 2px green', width: '50%'}}>
+            <div className="card" style={{marginRight: 'auto', marginLeft: 'auto', marginTop: '10%', border: 'solid 2px green', width: '50%'}}>
             <h6 style={{marginLeft: '2%', marginTop: '1%'}}><u>Welcome to...</u></h6>
             <h1 style={{ marginRight: 'auto', marginLeft: 'auto'}}>PIGGY BANK</h1>
             <img src={home_piggy} className="card-img-top" alt="..." />

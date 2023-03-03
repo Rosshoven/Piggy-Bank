@@ -12,7 +12,7 @@ export default function Root() {
         <div>
          
          {/* Took out 'bg-body-secondary' from <nav className> Added 'navbar-dark bg-dark' ... took out 'bg-dark and replaced with 'pink'*/}
-<nav style={{position: 'fixed', width: '100%', backgroundColor: 'lightpink'}} className="nav nav-pills nav-justified navbar navbar-expand-lg navbar-dark sticky-top">
+<nav style={{borderBottom: 'solid 1px green', position: 'fixed', width: '100%', backgroundColor: 'lightpink'}} className="nav nav-pills nav-justified navbar navbar-expand-lg navbar-dark sticky-top">
   <div className="container-fluid">
     <Link className="navbar-brand " to={'home'}>
         {/* <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" className="bi bi-piggy-bank-fill" viewBox="0 0 16 16">

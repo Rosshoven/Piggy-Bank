@@ -1,20 +1,21 @@
 import { useState } from "react";
-import ATMDeposit from "../ATMDeposit";
+import ATM from "../ATM";
 
 export default function Deposit() {
 
 
     const [deposit, setDeposit] = useState(0);
     const [totalState, setTotalState] = useState(0);
-    const isDeposit = true;
-    // const [atmMode, setAtmMode] = useState('');
     const [validTransaction, setValidTransaction] = useState(false);
 
+    const isDeposit = true;
     let status = `${totalState} `;
 
 
     const handleChange = (event) => {
-              if (Number(event.target.value) <= 0) {
+            event.target.value <= 0 ? 
+            document.getElementById('error-message').innerHTML = "Please enter amount above $0." : document.getElementById('error-message').innerHTML = ''; 
+            if (Number(event.target.value) <= 0 ) { 
                 return setValidTransaction(false);
               } else {
                 setValidTransaction(true);
@@ -23,37 +24,39 @@ export default function Deposit() {
             };
 
     const handleSubmit = (event) => {
-      
+        
         let newTotal = totalState + deposit;
         setTotalState(newTotal);
         setValidTransaction(false);
         event.preventDefault();
         document.getElementById('number-input').value = '0';
-      };
+        document.getElementById('success-message').innerHTML = `Success! Deposit of $${deposit} received.`;
+      
+    };
 
     return (
-        <div>
-            <h1 style={{marginTop: '15%'}}>Put Money In Your Piggy Bank</h1>
+        <div style={{display: 'flex', flexDirection: 'column', margin: '12%'}}>
+            
+            <h1 style={{margin: '10%', padding: '0%', display: 'flex', justifyContent: 'center'}}>Put Some Coins Into Your Piggy Bank</h1>
 
-            <form style={{marginTop: '15%'}} onSubmit={handleSubmit}>
-                <div className="card">
-                <div className="card-header">
-                {`Account Balance: $${status}`}
+            <form style={{ borderRadius: '5px', width: '30rem', marginRight: 'auto', marginLeft: 'auto',}} onSubmit={handleSubmit}>
+                 <div className="card">
+                    <div className="card-header" style={{fontSize: '1.5rem', fontWeight: 'bold'}}>
+                     {`Account Balance: $${status}`}
                     </div>
                     <div className="card-body">
-                        
-                    <ATMDeposit
+                    <div style={{color: 'green', fontSize: '1.7rem', margin: '3% auto'}} id="success-message"></div>
+                    <div style={{color: 'red', }} id="error-message"></div>
+                    <h3> Deposit Amount:</h3>
+                    <ATM
                         onChange={handleChange}
                         isDeposit={isDeposit}
                         isValid={validTransaction}
-                        ></ATMDeposit>
-
-                        {/* <a onSubmit={handleSubmit} href="#" class="btn btn-primary">Go somewhere</a> */}
-                        {/* <button className="btn btn-primary" type="submit" disabled={!isValid} width="200" onSubmit={handleSubmit} value="Submit" id="submit-input">Deposit</button> */}
+                        ></ATM>
                     </div>
                 </div>
-            
             </form>
+
         </div>
         
     );

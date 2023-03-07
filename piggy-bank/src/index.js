@@ -4,7 +4,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import ErrorPage from './error-page';
+import ErrorPage from '../src/error-page';
 import AllData from './routes/all-data';
 import CreateAccount from './routes/create-account.jsx';
 import Deposit from './routes/deposit';

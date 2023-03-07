@@ -20,7 +20,8 @@ export default function Withdraw () {
     const [validTransaction, setValidTransaction] = useState(false);
   
     let status = `Account Balance $ ${totalState} `;
-    console.log(`Account Rendered with isDeposit: ${isDeposit}`);
+
+
     const handleChange = (event) => {
       console.log(Number(event.target.value));
       if (Number(event.target.value) <= 0) {
@@ -35,7 +36,7 @@ export default function Withdraw () {
       }
       setDeposit(Number(event.target.value));
     };
-    
+
     const handleSubmit = (event) => {
       
       let newTotal = isDeposit ? totalState + deposit : totalState - deposit;
@@ -55,15 +56,16 @@ export default function Withdraw () {
                     <div className="card-header" style={{fontSize: '1.5rem', fontWeight: 'bold'}}>
                      {`Account Balance: $${status}`}
                     </div>
-                    <div className="card-body">
-                    <div style={{color: 'green', fontSize: '1.7rem', margin: '3% auto'}} id="success-message"></div>
-                    <div style={{color: 'red', }} id="error-message"></div>
-                    <h3> Withdrawal Amount:</h3>
-                    <ATM
+                    <div className="card-body" style={{display: 'flex', flexDirection: 'column'}}>
+                        <div style={{color: 'green', fontSize: '1.7rem', margin: '3% auto'}} id="success-message"></div>
+                        <div style={{color: 'red', }} id="error-message"></div>
+                        <h3> Withdrawal Amount:</h3>
+                        <ATM
                         onChange={handleChange}
                         isDeposit={isDeposit}
                         isValid={validTransaction}
                         ></ATM>
+                        {/* <button style={{marginTop: '10%'}} type="submit" className="btn btn-success" disabled={!isValid} width="200" value="Submit" id="submit-input">Withdraw</button> */}
                     </div>
                 </div>
             </form>

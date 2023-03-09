@@ -42,7 +42,7 @@ export default function Withdraw () {
         <div style={{display: 'flex', flexDirection: 'column', margin: '12%'}}>
 
 
-            <h1 style={{margin: '10%', padding: '0%', display: 'flex', justifyContent: 'center'}}>Take Some Coins From Your Piggy Bank</h1>
+            <h1 style={{margin: '5%', padding: '0%', display: 'flex', justifyContent: 'center'}}>Take Some Coins From Your Piggy Bank</h1>
 
             <form style={{ borderRadius: '5px', width: '30rem', marginRight: 'auto', marginLeft: 'auto',}} onSubmit={handleSubmit}>
                 <div className="card">

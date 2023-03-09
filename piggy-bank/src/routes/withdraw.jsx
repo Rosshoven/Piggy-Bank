@@ -10,12 +10,16 @@ export default function Withdraw () {
     const [validTransaction, setValidTransaction] = useState(false);
   
     const isWithdraw = true
-    let status = ``;
+    let status = `${totalState} `;
 
     const handleChange = (event) => {
-        event.target.value <= 0 ? 
-        document.getElementById('error-message').innerHTML = "Please enter amount above $0." : document.getElementById('error-message').innerHTML = ''; 
-        if (Number(event.target.value) <= 0 ) { 
+        // event.target.value > status ? 
+        // document.getElementById('error-message').innerHTML = `Piggy Bank doesn't have $${event.target.value}. Please enter a valid amount.` : document.getElementById('error-message').innerHTML = ''; 
+        if (Number(event.target.value) <= 0) { 
+            document.getElementById('error-message').innerHTML = `Please enter amount above $0.`
+            return setValidTransaction(false);
+          } else if (event.target.value > status) {
+            document.getElementById('error-message').innerHTML = `Your Piggy Bank doesn't have $${event.target.value}. Please enter a valid amount.`
             return setValidTransaction(false);
           } else {
             setValidTransaction(true);
@@ -30,6 +34,8 @@ export default function Withdraw () {
       setTotalState(newTotal);
       setValidTransaction(false);
       event.preventDefault();
+      document.getElementById('number-input').value = '';
+      document.getElementById('success-message').innerHTML = `Success! $${withdraw} withdrawn. `;
     };
   
     return (

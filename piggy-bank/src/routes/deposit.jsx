@@ -31,7 +31,6 @@ export default function Deposit() {
         event.preventDefault();
         document.getElementById('number-input').value = '';
         document.getElementById('success-message').innerHTML = `Success! Deposit of $${deposit} received.`;
-      
     };
 
     return (

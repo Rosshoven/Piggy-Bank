@@ -29,7 +29,7 @@ export default function Deposit() {
         setTotalState(newTotal);
         setValidTransaction(false);
         event.preventDefault();
-        document.getElementById('number-input').value = '0';
+        document.getElementById('number-input').value = '';
         document.getElementById('success-message').innerHTML = `Success! Deposit of $${deposit} received.`;
       
     };

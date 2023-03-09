@@ -1,15 +1,7 @@
-// export default function Withdraw() {
-//     return (
-//         <>
-//             <p style={{marginTop: '15%'}}>I'm the Withdraw Page</p>
-//         </>
-        
-//     );
-// }
-
 import React from "react";
 import { useState } from "react";
 import ATM from "../ATM";
+import handleSubmit from "./deposit";
 // import "./styles.css"
 
 export default function Withdraw () {
@@ -19,7 +11,7 @@ export default function Withdraw () {
     const [atmMode, setAtmMode] = useState('');
     const [validTransaction, setValidTransaction] = useState(false);
   
-    let status = `Account Balance $ ${totalState} `;
+    let status = ``;
 
 
     const handleChange = (event) => {
@@ -39,15 +31,16 @@ export default function Withdraw () {
 
     const handleSubmit = (event) => {
       
-      let newTotal = isDeposit ? totalState + deposit : totalState - deposit;
+      let newTotal = totalState - deposit;
       setTotalState(newTotal);
       setValidTransaction(false);
       event.preventDefault();
     };
   
     return (
-
+        
         <div style={{display: 'flex', flexDirection: 'column', margin: '12%'}}>
+
 
             <h1 style={{margin: '10%', padding: '0%', display: 'flex', justifyContent: 'center'}}>Take Some Coins From Your Piggy Bank</h1>
 

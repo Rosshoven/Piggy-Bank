@@ -5,33 +5,28 @@ import ATM from "../ATM";
 // import "./styles.css"
 
 export default function Withdraw () {
-    const [deposit, setDeposit] = useState(0);
+    const [withdraw, setWithdraw] = useState(0);
     const [totalState, setTotalState] = useState(0);
-    const [isDeposit, setIsDeposit] = useState(true);
-    const [atmMode, setAtmMode] = useState('');
     const [validTransaction, setValidTransaction] = useState(false);
   
+    const isWithdraw = true
     let status = ``;
 
-
     const handleChange = (event) => {
-      console.log(Number(event.target.value));
-      if (Number(event.target.value) <= 0) {
-        return setValidTransaction(false);
-      }
-      if (atmMode === 'Cash Back' && Number(event.target.value) > totalState) {
-        setValidTransaction(false);
-      } else if (atmMode === 'Deposit' && Number(event.target.value) < 1) {
-        setValidTransaction(false);
-      } else {
-        setValidTransaction(true);
-      }
-      setDeposit(Number(event.target.value));
-    };
+        event.target.value <= 0 ? 
+        document.getElementById('error-message').innerHTML = "Please enter amount above $0." : document.getElementById('error-message').innerHTML = ''; 
+        if (Number(event.target.value) <= 0 ) { 
+            return setValidTransaction(false);
+          } else {
+            setValidTransaction(true);
+          }
+          setWithdraw(Number(event.target.value));
+        };
+  
 
     const handleSubmit = (event) => {
       
-      let newTotal = totalState - deposit;
+      let newTotal = totalState - withdraw;
       setTotalState(newTotal);
       setValidTransaction(false);
       event.preventDefault();
@@ -55,7 +50,7 @@ export default function Withdraw () {
                         <h3> Withdrawal Amount:</h3>
                         <ATM
                         onChange={handleChange}
-                        isDeposit={isDeposit}
+                        isWithdraw={isWithdraw}
                         isValid={validTransaction}
                         ></ATM>
                         {/* <button style={{marginTop: '10%'}} type="submit" className="btn btn-success" disabled={!isValid} width="200" value="Submit" id="submit-input">Withdraw</button> */}

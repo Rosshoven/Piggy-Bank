@@ -3,7 +3,7 @@ import { useAccountContext } from "./account-context";
 
 export default function AllData() {
 
-    const { accountData: { userName, email, password, accounts } } = useAccountContext();
+    const { accountData: { userName, email, password } } = useAccountContext();
      
     console.log();
     return (

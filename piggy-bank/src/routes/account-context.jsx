@@ -7,13 +7,13 @@ const AccountContext = createContext({})
 // this is the provider component that will wrap our example children components and provide the context to all of our child components
 export const AccountProvider = ({ children }) => {
 
-    const [accounts, setAccounts] = useState([])
+  const [accounts, setAccounts] = useState([])
 
   const [accountData, setAccountData] = useState({
     userName: '',
     email: '',
-    password: '',
-    balance: 100
+    password: ''
+    // balance: 100
   })
 
   const handleSetAccountData = (data) => {

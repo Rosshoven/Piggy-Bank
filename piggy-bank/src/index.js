@@ -5,6 +5,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import ErrorPage from '../src/error-page';
+import { AccountProvider } from './routes/account-context';
 import AllData from './routes/all-data';
 import CreateAccount from './routes/create-account.jsx';
 import Deposit from './routes/deposit';
@@ -46,7 +47,9 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AccountProvider>
+      <RouterProvider router={router} />
+    </AccountProvider>
   </React.StrictMode>
 );
 

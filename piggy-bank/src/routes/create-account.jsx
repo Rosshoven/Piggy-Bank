@@ -2,12 +2,16 @@ import { useFormik } from "formik";
 import { useState } from "react";
 import { basicSchema } from "../schemas/schema";
 
+import { useAccountContext } from "./account-context";
+
 
 function BasicForm() {
+    const { accountData, setAccountData} = useAccountContext();
+
     const [createAccountTrue, setCreateAccountTrue] = useState(false);
     const [show, setShow] = useState(true);
 
-    
+    console.log('accountData', accountData)
 
     // onSubmit function for submitting 
     async function onSubmit(values, actions) {
@@ -15,7 +19,18 @@ function BasicForm() {
         // Instead of console.log put in context push for data. ctx.users.push({name,email,password,balance:100});
         console.log(values);
         console.log(actions);
+
+        const { userName, email, password } = values
+        // restful route post request
         await new Promise((resolve) => setTimeout(resolve, 1000));
+        
+        setAccountData({
+            ...accountData,
+            userName,
+            email,
+            password
+          })
+
         
         // alert(`Success. Your account has been created!`);
         actions.resetForm({

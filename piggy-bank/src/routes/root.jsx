@@ -3,14 +3,17 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 // import one_gold_coin_piggy from '../images/one_gold_coin_piggy.jpeg';
 import Pig_Logo from '../images/Pig_Logo.png';
+import { BalanceContext } from "./balance-context";
+import React, { useState } from "react";
 
 export default function Root() {
-
+  const [balance, setBalance] = useState(0);
 
     return (
       <>
+      <BalanceContext.Provider value={{balance, setBalance}}>
         <div>
-         
+
          {/* Took out 'bg-body-secondary' from <nav className> Added 'navbar-dark bg-dark' ... took out 'bg-dark and replaced with 'pink'*/}
 <nav style={{borderBottom: 'solid 1.5px green', position: 'fixed', width: '100%', backgroundColor: 'lightpink'}} className="nav nav-pills nav-justified navbar navbar-expand-lg navbar-dark sticky-top">
   <div className="container-fluid">
@@ -54,14 +57,15 @@ export default function Root() {
         </li>
     
 
-      </ul> 
-    </div>
-  </div>
-</nav>
+            </ul> 
+          </div>
+        </div>
+      </nav>
         </div>
         <div id="detail">
             <Outlet />
         </div>
+      </BalanceContext.Provider>
       </>
     );
   }

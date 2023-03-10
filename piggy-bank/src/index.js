@@ -12,7 +12,6 @@ import Home from './routes/home';
 import Root from './routes/root';
 import Withdraw from './routes/withdraw';
 
-
 // starting to set up my routes
 const router = createBrowserRouter([
   {

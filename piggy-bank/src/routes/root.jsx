@@ -5,9 +5,16 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import Pig_Logo from '../images/Pig_Logo.png';
 import { BalanceContext } from "./balance-context";
 import React, { useState } from "react";
+import { Popover } from "bootstrap";
 
 export default function Root() {
   const [balance, setBalance] = useState(0);
+  const [homeShown, setHomeShown] = useState(false);
+  const [cAShown, setCAShown] = useState(false);
+  const [depShown, setDepShown] = useState(false);
+  const [withdrawShown, setWithdrawShown] = useState(false);
+  const [allDataShown, setAllDataShown] = useState(false);
+  
 
     return (
       <>
@@ -29,33 +36,38 @@ export default function Root() {
       <ul className="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style={{bsScrollHeight: "100px"}}>
         
         <li className="nav-link">
-          <NavLink to={'home'} className={({isActive}) => {
+          <NavLink to={'home'} onMouseEnter={() => setHomeShown(true)} onMouseLeave={() => setHomeShown(false)} className={({isActive}) => {
             return `nav-link active${isActive ? ' bg-success hover:bg-gray-700 hover:text-white' : 'bg-gray-900 text-white'}`
           }}>Home</NavLink>
+          {homeShown && (<div style={{fontSize: '1rem', color: 'black', backgroundColor: 'antiquewhite', marginTop: '3%', display: 'flex', justifyContent: 'center'}}>There's no place like home.</div>)}
         </li>
 
         <li className="nav-link">
-         <NavLink to={'create-account'} className={({isActive}) => {
+         <NavLink to={'create-account'} onMouseEnter={() => setCAShown(true)} onMouseLeave={() => setCAShown(false)} className={({isActive}) => {
           return `nav-link active${isActive ? ' bg-success hover:bg-gray-700 hover:text-white' : 'bg-gray-900 text-white'}`
           }}>Create Account</NavLink>
+          {cAShown && (<div style={{fontSize: '1rem', color: 'black', backgroundColor: 'antiquewhite', marginTop: '3%', display: 'flex', justifyContent: 'center'}}>Create your Piggy Bank here!</div>)}
         </li>
 
         <li className="nav-link">
-         <NavLink to={'deposit'} className={({isActive}) => {
+         <NavLink to={'deposit'} onMouseEnter={() => setDepShown(true)} onMouseLeave={() => setDepShown(false)} className={({isActive}) => {
           return `nav-link active${isActive ? ' bg-success hover:bg-gray-700 hover:text-white' : 'bg-gray-900 text-white'}`
           }}>Deposit</NavLink>
+          {depShown && (<div style={{fontSize: '1rem', color: 'black', backgroundColor: 'antiquewhite', marginTop: '3%', display: 'flex', justifyContent: 'center'}}>Feed the Piggy Bank!</div>)}
         </li>
 
         <li className="nav-link">
-         <NavLink to={'withdraw'} className={({isActive}) => {
+         <NavLink to={'withdraw'} onMouseEnter={() => setWithdrawShown(true)} onMouseLeave={() => setWithdrawShown(false)} className={({isActive}) => {
             return `nav-link active${isActive ? ' bg-success hover:bg-gray-700 hover:text-white' : 'bg-gray-900 text-white'}`
           }}>Withdraw</NavLink>
+          {withdrawShown && (<div style={{fontSize: '1rem', color: 'black', backgroundColor: 'antiquewhite', marginTop: '3%', display: 'flex', justifyContent: 'center'}}>Break the Piggy Bank!</div>)}
         </li>
 
         <li className="nav-link">
-         <NavLink to={'all-data'} className={({isActive}) => {
+         <NavLink to={'all-data'} onMouseEnter={() => setAllDataShown(true)} onMouseLeave={() => setAllDataShown(false)} className={({isActive}) => {
             return `nav-link active${isActive ? ' bg-success hover:bg-gray-700 hover:text-white' : 'bg-gray-900 text-white'}`
           }}>All Data</NavLink>
+          {allDataShown && (<div style={{fontSize: '1rem', color: 'black', backgroundColor: 'antiquewhite', marginTop: '3%', display: 'flex', justifyContent: 'center'}}>User's Piggy Bank info.</div>)}
         </li>
     
 

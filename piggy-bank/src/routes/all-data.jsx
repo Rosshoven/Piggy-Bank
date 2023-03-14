@@ -1,4 +1,5 @@
 import { useAccountContext } from "./account-context";
+import Pig_Logo from '../images/Pig_Logo.png';
 
 
 export default function AllData() {
@@ -8,12 +9,16 @@ export default function AllData() {
     return (
         
 
-        <div style={{display: 'flex', flexDirection: 'column', alignitems: 'center', padding: '10% 0% 40% 0%', backgroundColor: 'lightblue', fontFamily: 'Forum, cursive', fontSize: '2rem'}}>
-            
-            <h1 style={{marginTop: '5%', display: 'flex', justifyContent: 'center', fontSize: '4rem'}}>User's Piggy Bank Info</h1>
-            <hr />
+        <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '16% 0% 40% 0%', backgroundColor: 'lightblue', fontFamily: 'Forum, cursive', fontSize: '2rem'}}>
+            <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                <img style={{width:'70px', height: '70px', borderRadius: '50%', border: 'solid .5px black', alignSelf: 'center'}} src={Pig_Logo} alt="Logo" />
+                <h1 style={{marginTop: '5%', display: 'flex', justifyContent: 'center', fontSize: '4rem'}}>User's Piggy Bank Info</h1>
+                <img style={{width:'70px', height: '70px', borderRadius: '50%', border: 'solid .5px black', alignSelf: 'center'}} src={Pig_Logo} alt="Logo" />
+            </div>   
 
-            <div class="card" style={{width: '35rem', margin: '0% auto'}}>
+
+
+            <div class="card" style={{width: '35rem', margin: '3% auto', border: 'solid 2px green'}}>
   {/* <div class="card-header">
     Featured
   </div> */}
@@ -28,17 +33,6 @@ export default function AllData() {
             <p>{password}</p> */}
         </div>
         
+        
     );
 } 
-
-
-// <p style={{marginTop: '15%'}}>
-//                 {!accounts[0] ? accounts.map((item, index) => {
-//                     <div key={index}>
-//                         <span>{item.username}</span>
-//                     </div>
-//                 })
-
-//                 : null
-//             }
-//             </p>

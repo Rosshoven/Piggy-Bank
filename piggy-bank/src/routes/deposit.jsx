@@ -40,9 +40,9 @@ export default function Deposit() {
         <div style={{display: 'flex', flexDirection: 'column', padding: '10% 0% 40% 0%', backgroundColor: 'lightblue'}}>
             
             <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                <img style={{width:'70px', height: '70px', borderRadius: '50%'}} src={Pig_Deposit} alt="Pig with Cash" /> 
+                <img style={{width:'70px', height: '70px', borderRadius: '50%', border: 'solid 1px green'}} src={Pig_Deposit} alt="Pig with Cash" /> 
                 <h1 style={{margin: '5% 1% ', padding: '0%', display: 'flex', justifyContent: 'center'}}>Put Some Coins Into Your Piggy Bank</h1>
-                <img style={{width:'70px', height: '70px', borderRadius: '50%'}} src={Pig_Deposit} alt="Pig with Cash" /> 
+                <img style={{width:'70px', height: '70px', borderRadius: '50%', border: 'solid 1px green'}} src={Pig_Deposit} alt="Pig with Cash" /> 
             </div>
             
             <form style={{ borderRadius: '5px', width: '30rem', marginRight: 'auto', marginLeft: 'auto', border: '2px solid green'}} onSubmit={handleSubmit}>

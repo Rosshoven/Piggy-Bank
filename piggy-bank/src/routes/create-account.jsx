@@ -69,7 +69,7 @@ function BasicForm() {
         <div className='card form-control relative' style={{ borderSizing: 'border-box', backgroundColor: 'lightblue', position: 'static', padding: '3% 0% 30% 0%' }}>
             <form onSubmit={handleSubmit} autoComplete="off">
 
-                <div className="card-body" style={{ borderRadius: '5px', width: '18rem', marginRight: 'auto', marginLeft: 'auto', marginTop: '10%', backgroundColor: 'gray' }}>
+                <div className="card-body" style={{ borderRadius: '5px', width: '18rem', marginRight: 'auto', marginLeft: 'auto', marginTop: '10%', backgroundColor: '#a6a6a6',  border: '2px solid green' }}>
                     <h2 style={{ marginRight: 'auto', marginLeft: 'auto', marginTop: '2%', padding: '2%', backgroundColor: 'pink', borderRadius: '20px' }}>Create Account</h2>
                     <hr />
                     {/* ADD IMAGE    <img src="..." class="card-img-top" alt="..." /> */}

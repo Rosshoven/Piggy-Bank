@@ -5,7 +5,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import Pig_Logo from '../images/Pig_Logo.png';
 import { BalanceContext } from "./balance-context";
 import React, { useState } from "react";
-import { Popover } from "bootstrap";
+// import { Popover } from "bootstrap";
 
 export default function Root() {
   const [balance, setBalance] = useState(0);
@@ -35,39 +35,39 @@ export default function Root() {
     <div className="collapse navbar-collapse" id="navbarScroll" style={{ marginLeft: '1%'}}>
       <ul className="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style={{bsScrollHeight: "100px"}}>
         
-        <li className="nav-link">
-          <NavLink to={'home'} onMouseEnter={() => setHomeShown(true)} onMouseLeave={() => setHomeShown(false)} className={({isActive}) => {
+        <li className="nav-link" onMouseEnter={() => setHomeShown(true)} onMouseLeave={() => setHomeShown(false)}>
+          <NavLink to={'home'}  className={({isActive}) => {
             return `nav-link active${isActive ? ' bg-success hover:bg-gray-700 hover:text-white' : 'bg-gray-900 text-white'}`
           }}>Home</NavLink>
-          {homeShown && (<div style={{fontSize: '1rem', color: 'black', backgroundColor: 'antiquewhite', marginTop: '3%', display: 'flex', justifyContent: 'center'}}>There's no place like home.</div>)}
+          {homeShown && (<div style={{borderRadius: '5px', fontSize: '1rem', color: 'black', backgroundColor: 'antiquewhite', marginTop: '3%', display: 'flex', justifyContent: 'center', padding: '2%'}}>Oink Oink! Welcome to the sty!</div>)}
         </li>
-
-        <li className="nav-link">
-         <NavLink to={'create-account'} onMouseEnter={() => setCAShown(true)} onMouseLeave={() => setCAShown(false)} className={({isActive}) => {
+        
+        <li className="nav-link" onMouseEnter={() => setCAShown(true)} onMouseLeave={() => setCAShown(false)}>
+         <NavLink to={'create-account'}  className={({isActive}) => {
           return `nav-link active${isActive ? ' bg-success hover:bg-gray-700 hover:text-white' : 'bg-gray-900 text-white'}`
           }}>Create Account</NavLink>
-          {cAShown && (<div style={{fontSize: '1rem', color: 'black', backgroundColor: 'antiquewhite', marginTop: '3%', display: 'flex', justifyContent: 'center'}}>Create your Piggy Bank here!</div>)}
+          {cAShown && (<div style={{borderRadius: '5px', fontSize: '1rem', color: 'black', backgroundColor: 'antiquewhite', marginTop: '3%', display: 'flex', justifyContent: 'center', padding: '2%'}}>Create your Piggy Bank here!</div>)}
         </li>
-
-        <li className="nav-link">
-         <NavLink to={'deposit'} onMouseEnter={() => setDepShown(true)} onMouseLeave={() => setDepShown(false)} className={({isActive}) => {
+        
+        <li className="nav-link" onMouseEnter={() => setDepShown(true)} onMouseLeave={() => setDepShown(false)}>
+         <NavLink to={'deposit'}  className={({isActive}) => {
           return `nav-link active${isActive ? ' bg-success hover:bg-gray-700 hover:text-white' : 'bg-gray-900 text-white'}`
           }}>Deposit</NavLink>
-          {depShown && (<div style={{fontSize: '1rem', color: 'black', backgroundColor: 'antiquewhite', marginTop: '3%', display: 'flex', justifyContent: 'center'}}>Feed the Piggy Bank!</div>)}
+          {depShown && (<div style={{borderRadius: '5px', fontSize: '1rem', color: 'black', backgroundColor: 'antiquewhite', marginTop: '3%', display: 'flex', justifyContent: 'center', padding: '2%'}}>Feed the Piggy!</div>)}
         </li>
 
-        <li className="nav-link">
-         <NavLink to={'withdraw'} onMouseEnter={() => setWithdrawShown(true)} onMouseLeave={() => setWithdrawShown(false)} className={({isActive}) => {
+        <li className="nav-link" onMouseEnter={() => setWithdrawShown(true)} onMouseLeave={() => setWithdrawShown(false)}>
+         <NavLink to={'withdraw'}  className={({isActive}) => {
             return `nav-link active${isActive ? ' bg-success hover:bg-gray-700 hover:text-white' : 'bg-gray-900 text-white'}`
           }}>Withdraw</NavLink>
-          {withdrawShown && (<div style={{fontSize: '1rem', color: 'black', backgroundColor: 'antiquewhite', marginTop: '3%', display: 'flex', justifyContent: 'center'}}>Break the Piggy Bank!</div>)}
+          {withdrawShown && (<div style={{borderRadius: '5px', fontSize: '1rem', color: 'black', backgroundColor: 'antiquewhite', marginTop: '3%', display: 'flex', justifyContent: 'center', padding: '2%'}}>Break the Piggy!</div>)}
         </li>
 
-        <li className="nav-link">
-         <NavLink to={'all-data'} onMouseEnter={() => setAllDataShown(true)} onMouseLeave={() => setAllDataShown(false)} className={({isActive}) => {
+        <li className="nav-link" onMouseEnter={() => setAllDataShown(true)} onMouseLeave={() => setAllDataShown(false)}>
+         <NavLink to={'all-data'}  className={({isActive}) => {
             return `nav-link active${isActive ? ' bg-success hover:bg-gray-700 hover:text-white' : 'bg-gray-900 text-white'}`
           }}>All Data</NavLink>
-          {allDataShown && (<div style={{fontSize: '1rem', color: 'black', backgroundColor: 'antiquewhite', marginTop: '3%', display: 'flex', justifyContent: 'center'}}>User's Piggy Bank info.</div>)}
+          {allDataShown && (<div style={{borderRadius: '5px', fontSize: '1rem', color: 'black', backgroundColor: 'antiquewhite', marginTop: '3%', display: 'flex', justifyContent: 'center', padding: '2%'}}>User's Piggy Bank info.</div>)}
         </li>
     
 

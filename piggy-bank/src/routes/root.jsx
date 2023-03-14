@@ -15,10 +15,11 @@ export default function Root() {
         <div>
 
          {/* Took out 'bg-body-secondary' from <nav className> Added 'navbar-dark bg-dark' ... took out 'bg-dark and replaced with 'pink'*/}
-<nav style={{borderBottom: 'solid 1.5px green', position: 'fixed', width: '100%', backgroundColor: 'lightpink'}} className="nav nav-pills nav-justified navbar navbar-expand-lg navbar-dark sticky-top">
+<nav style={{borderBottom: 'solid 1.5px green', position: 'fixed', width: '100%', backgroundColor: '#ffc4cd'}} className="nav nav-pills nav-justified navbar navbar-expand-lg navbar-dark sticky-top">
   <div className="container-fluid">
     <Link className="navbar-brand " to={'home'}>
       <img style={{width:'70px', height: '70px', borderRadius: '50%'}} src={Pig_Logo} alt="Logo" />
+      Piggy bank
     </Link>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>

@@ -65,7 +65,8 @@ function BasicForm() {
 
     return (
         show ? 
-        <div className='card form-control relative' style={{ borderSizing: 'border-box', backgroundColor: 'lightblue', position: 'static' }}>
+        
+        <div className='card form-control relative' style={{ borderSizing: 'border-box', backgroundColor: 'lightblue', position: 'static', padding: '3% 0% 30% 0%' }}>
             <form onSubmit={handleSubmit} autoComplete="off">
 
                 <div className="card-body" style={{ borderRadius: '5px', width: '18rem', marginRight: 'auto', marginLeft: 'auto', marginTop: '10%', backgroundColor: 'gray' }}>
@@ -127,10 +128,11 @@ function BasicForm() {
                     </div>
                 </div>
             </form> 
-        </div> : (
+        </div>
+        : (
                 <>
-                <div>
-                <div className="card w-50" style={{marginTop: '20%', marginRight: 'auto', marginLeft: 'auto', backgroundColor: 'pink'}}>
+                <div className='card form-control relative' style={{ borderSizing: 'border-box', backgroundColor: 'lightblue', position: 'static', paddingBottom: '40%'}}>
+                <div className="card w-50" style={{marginTop: '20%', marginRight: 'auto', marginLeft: 'auto', backgroundColor: 'pink', border: '2px solid green'}}>
                     <div className="card-body">
                         <h5 className="card-title">Success! Your account has been created.</h5>
                         <p className="card-text">What's better than a bank account with us?...How about another bank account with us? Piggy is hungry!</p>

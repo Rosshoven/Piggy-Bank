@@ -1,10 +1,10 @@
 import { Link, Outlet, NavLink } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-// import one_gold_coin_piggy from '../images/one_gold_coin_piggy.jpeg';
 import Pig_Logo from '../images/Pig_Logo.png';
 import { BalanceContext } from "./balance-context";
 import React, { useState } from "react";
+// import { AccountContext } from "./account-context";
 // import { Popover } from "bootstrap";
 
 export default function Root() {

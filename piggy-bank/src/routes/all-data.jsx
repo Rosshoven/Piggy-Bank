@@ -1,14 +1,14 @@
 import { useAccountContext } from "./account-context";
 import Pig_Logo from '../images/Pig_Logo.png';
-
+// import React, { useContext} from "react";
 
 export default function AllData() {
-
+    // const msg = useContext(AccountContext);
     const { accountData: { userName, email, password } } = useAccountContext();
     console.log();
     return (
         
-
+        
         <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '16% 0% 40% 0%', backgroundColor: 'lightblue', fontFamily: 'Forum, cursive', fontSize: '2rem'}}>
             <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                 <img style={{width:'70px', height: '70px', borderRadius: '50%', border: 'solid .5px black', alignSelf: 'center'}} src={Pig_Logo} alt="Logo" />
@@ -28,11 +28,6 @@ export default function AllData() {
                     <li class="list-group-item"><u>Password</u>: {password}</li>
                 </ul>
             </div>
-            {/* <p>{userName}</p>
-            <p>{email}</p>
-            <p>{password}</p> */}
-        </div>
-        
-        
-    );
-} 
+        </div>     
+        );
+    } 

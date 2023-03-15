@@ -18,10 +18,16 @@ export default function AllData() {
 
 
 
-            <div class="card" style={{width: '35rem', margin: '3% auto', border: 'solid 2px green'}}>
+            <div className="card" style={{width: '35rem', margin: '3% auto', border: 'solid 2px green', backgroundColor: 'green'}}>
   {/* <div class="card-header">
     Featured
   </div> */}
+                 <ul className="list-group list-group-flush">
+                    <li className="list-group-item"><u>Username</u>: MichaelRoss</li>
+                    <li className="list-group-item"><u>Email</u>: MisterMichael@gmail.com</li>
+                    <li className="list-group-item"><u>Password</u>: Piano23!</li>
+                </ul>
+                
                 <ul className="list-group list-group-flush">
                     <li className="list-group-item"><u>Username</u>: {userName}</li>
                     <li className="list-group-item"><u>Email</u>: {email}</li>

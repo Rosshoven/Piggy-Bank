@@ -22,10 +22,10 @@ export default function AllData() {
   {/* <div class="card-header">
     Featured
   </div> */}
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><u>Username</u>: {userName}</li>
-                    <li class="list-group-item"><u>Email</u>: {email}</li>
-                    <li class="list-group-item"><u>Password</u>: {password}</li>
+                <ul className="list-group list-group-flush">
+                    <li className="list-group-item"><u>Username</u>: {userName}</li>
+                    <li className="list-group-item"><u>Email</u>: {email}</li>
+                    <li className="list-group-item"><u>Password</u>: {password}</li>
                 </ul>
             </div>
         </div>     

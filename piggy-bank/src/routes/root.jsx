@@ -76,6 +76,7 @@ export default function Root() {
         </div>
       </nav>
         </div>
+        
         <div id="detail">
             <Outlet />
         </div>

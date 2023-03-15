@@ -29,3 +29,5 @@ export const AccountProvider = ({ children }) => {
 
 // 
 export const useAccountContext = () => useContext(AccountContext);
+
+// Cite: Pair-coded with Max Sturges - https://github.com/MSturges. Helping me understand useContext.

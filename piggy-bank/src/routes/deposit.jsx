@@ -2,18 +2,15 @@ import React from "react";
 import { useState, useContext } from "react";
 import ATM from "../ATM";
 import { BalanceContext } from "./balance-context";
-// import pig_on_cash_images from '../images/pig_on_cash_images.jpeg';
 import Pig_Deposit from '../images/Pig_Deposit.jpg';
 
 
 export default function Deposit() {
     const [deposit, setDeposit] = useState(0);
-    // const [totalState, setTotalState] = useState(0);
     const [validTransaction, setValidTransaction] = useState(false);
     const {balance, setBalance} = useContext(BalanceContext);
 
     const isDeposit = true;
-    // let status = `${balance}`;
 
     const handleChange = (event) => {
             Number(event.target.value) <= 0 ? 
@@ -28,7 +25,7 @@ export default function Deposit() {
 
     const handleSubmit = (event) => { 
         let newTotal = (balance + deposit);
-        // setTotalState(newTotal);
+
         setBalance(newTotal);
         setValidTransaction(false);
         event.preventDefault();

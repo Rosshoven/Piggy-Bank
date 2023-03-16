@@ -3,20 +3,15 @@ import { useState } from "react";
 import { basicSchema } from "../schemas/schema";
 
 import { useAccountContext } from "./account-context";
-import addAccount from './account-context';
-
 
 function BasicForm() {
-    const { accountData, setAccountData} = useAccountContext();
+    // const { accountData, setAccountData} = useAccountContext();
+    const { handleSetAccountData } = useAccountContext();
 
     const [createAccountTrue, setCreateAccountTrue] = useState(false);
     const [show, setShow] = useState(true);
 
-    const [accounts, setAccounts] = useState([])
-
-
-
-    console.log('accountData', accountData)
+    // console.log('accountData', accountData)
 
     // onSubmit function for submitting 
     async function onSubmit(values, actions) {
@@ -25,19 +20,12 @@ function BasicForm() {
         console.log(values);
         console.log(actions);
 
-        const { userName, email, password } = values
+        // const { userName, email, password } = values
         // restful route post request
         await new Promise((resolve) => setTimeout(resolve, 1000));
         
-        addAccount(values);
-        setAccounts(...accounts, values);
-        setAccountData({
-            ...accountData,
-            userName,
-            email,
-            password
-          })
-        // alert(`Success. Your account has been created!`);
+        handleSetAccountData(values);
+    
         actions.resetForm({
             value: {
                 // the type of `values` inferred to be Blog
@@ -75,7 +63,7 @@ function BasicForm() {
             <form onSubmit={handleSubmit} autoComplete="off">
 
                 <div className="card-body" style={{ borderRadius: '5px', width: '18rem', marginRight: 'auto', marginLeft: 'auto', marginTop: '10%', backgroundColor: '#a6a6a6',  border: '2px solid green' }}>
-                    <h2 style={{ marginRight: 'auto', marginLeft: 'auto', marginTop: '2%', padding: '2%', backgroundColor: 'pink', borderRadius: '20px' }}>Create Account</h2>
+                    <h2 style={{ margin: '2% auto', padding: '2%', backgroundColor: 'pink', borderRadius: '20px', fontFamily: 'Forum, cursive', fontSize: '2.2rem', fontWeight: 'bold', display: 'flex', justifyContent: 'center' }}>Create Account</h2>
                     <hr />
                     {/* ADD IMAGE    <img src="..." class="card-img-top" alt="..." /> */}
                     <div className="card-body">
@@ -128,7 +116,6 @@ function BasicForm() {
                             className={errors.confirmPassword && touched.confirmPassword ? "input-error form-control" : "form-control"} />
                         {errors.confirmPassword && touched.confirmPassword && <p className="error">{errors.confirmPassword}</p>}
 
-                        {/* <button disabled={isSubmitting} type="submit">Create Account</button> */}
                         <button style={{ marginTop: '5%' }} disabled={ values.password.length === 0 && values.confirmPassword.length === 0 ? true : false } type="submit" className="btn btn-success">{createAccountTrue ? 'Create Another Account': 'Create Account'}</button>
                     </div>
                 </div>

@@ -3,6 +3,7 @@ import { useState } from "react";
 import { basicSchema } from "../schemas/schema";
 
 import { useAccountContext } from "./account-context";
+import addAccount from './account-context';
 
 
 function BasicForm() {
@@ -10,6 +11,10 @@ function BasicForm() {
 
     const [createAccountTrue, setCreateAccountTrue] = useState(false);
     const [show, setShow] = useState(true);
+
+    const [accounts, setAccounts] = useState([])
+
+
 
     console.log('accountData', accountData)
 
@@ -24,14 +29,14 @@ function BasicForm() {
         // restful route post request
         await new Promise((resolve) => setTimeout(resolve, 1000));
         
+        addAccount(values);
+        setAccounts(...accounts, values);
         setAccountData({
             ...accountData,
             userName,
             email,
             password
           })
-
-        
         // alert(`Success. Your account has been created!`);
         actions.resetForm({
             value: {

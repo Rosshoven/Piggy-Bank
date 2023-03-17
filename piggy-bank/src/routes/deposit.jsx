@@ -14,7 +14,7 @@ export default function Deposit() {
 
     const handleChange = (event) => {
             Number(event.target.value) <= 0 ? 
-            document.getElementById('error-message').innerHTML = "Please enter amount above $0." : document.getElementById('error-message').innerHTML = ''; 
+            document.getElementById('error-message').innerHTML = "Oink! Please enter amount above $0." : document.getElementById('error-message').innerHTML = ''; 
              if (Number(event.target.value) <= 0 ) { 
                 return setValidTransaction(false);
               } else {

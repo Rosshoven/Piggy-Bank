@@ -15,10 +15,10 @@ export default function Withdraw () {
 
     const handleChange = (event) => {
             if (Number(event.target.value) <= 0) { 
-            document.getElementById('error-message').innerHTML = `Please enter amount above $0.`
+            document.getElementById('error-message').innerHTML = `Oink! Please enter amount above $0.`
             return setValidTransaction(false);
           } else if (Number(event.target.value) > balance) {
-            document.getElementById('error-message').innerHTML = `Your Piggy Bank doesn't have $${event.target.value}. Please enter a valid amount.`
+            document.getElementById('error-message').innerHTML = `Oink! Your Piggy Bank doesn't have $${event.target.value}.`
             return setValidTransaction(false);
           } else {
             setValidTransaction(true);

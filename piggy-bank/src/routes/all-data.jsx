@@ -29,11 +29,11 @@ console.log('accounts', accounts)
                 {/* <div class="card-header">
                     Featured
                 </div> */}
-                    <ul className="list-group list-group-flush">
+                    {/* <ul className="list-group list-group-flush">
                         <li className="list-group-item"><u>Username</u>: MichaelRoss</li>
                         <li className="list-group-item"><u>Email</u>: MisterMichael@gmail.com</li>
                         <li className="list-group-item"><u>Password</u>: Piano23!</li>
-                    </ul>
+                    </ul> */}
                     {/* map over accounts and return a jsx */}
                 {accounts.map((account) => {
                     return (    

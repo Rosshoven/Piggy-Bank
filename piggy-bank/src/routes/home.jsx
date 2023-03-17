@@ -2,7 +2,7 @@ import home_piggy from '../images/home_piggy.jpg';
 
 export default function Home() {
     return (
-        < div style={{backgroundColor: 'lightblue', padding: '3%'}}>
+        < div style={{backgroundColor: 'lightblue', borderSizing: 'border-box', position: 'static', padding: '3% 0% 30% 0%'}}>
             <div className="card" style={{marginRight: 'auto', marginLeft: 'auto', marginTop: '10%', border: 'solid 4px green', width: '42%', fontFamily: 'Forum, cursive', fontSize: '1.4rem'}}>
             
                 <h6 style={{padding: '2% 2%', backgroundColor: 'pink', marginBottom: '-1%', fontFamily: 'Forum, cursive'}}><u>Welcome to...</u></h6>

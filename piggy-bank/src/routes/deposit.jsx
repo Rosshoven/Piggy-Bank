@@ -1,4 +1,5 @@
 import React from "react";
+// Two important react hooks imported
 import { useState, useContext } from "react";
 import ATM from "../ATM";
 import { BalanceContext } from "./balance-context";
@@ -25,7 +26,7 @@ export default function Deposit() {
 
     const handleSubmit = (event) => { 
         let newTotal = (balance + deposit);
-
+        
         setBalance(newTotal);
         setValidTransaction(false);
         event.preventDefault();

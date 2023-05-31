@@ -57,6 +57,7 @@ function BasicForm() {
 
 
     return (
+        // show initial state is true
         show ? 
         
         <div className='card form-control relative' style={{ borderSizing: 'border-box', backgroundColor: 'lightblue', position: 'static', padding: '3% 0% 30% 0%' }}>

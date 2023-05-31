@@ -14,6 +14,8 @@ import Root from './routes/root';
 import Withdraw from './routes/withdraw';
 
 // starting to set up my routes
+// router is defined as a createBrowserRouter(imported from react-router-dom) with routes I create
+// This is not a navbar. This is the router the navbar uses to go from page to page
 const router = createBrowserRouter([
   {
     path: "/",
@@ -21,6 +23,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
+        // the path given for index: will show upon inital load
         index: 'home',
         element: <Home />
       },

@@ -5,37 +5,47 @@ import { BalanceContext } from "./balance-context";
 import Pig_Withdraw from "../images/Pig_Withdraw.jpg";
 
 export default function Withdraw () {
+  // withdraw state is used in handlechange where setWithdraw defines the withdrawal amount that is then used in handleSubmit
     const [withdraw, setWithdraw] = useState(0);
-    // const [totalState, setTotalState] = useState(0);
+    // validTransaction-setValidTransaction is used to change the text of the button within the ATM component
     const [validTransaction, setValidTransaction] = useState(false);
+    // Bringing in the same BalanceContext so the balance remains the same throughout app.
     const {balance, setBalance} = useContext(BalanceContext);
   
-    const isWithdraw = true
-    // let status = `${balance}`;
+    // const isWithdraw = true //don't see purpose of this code.
+    // let status = `${balance}`; //don't need this because I'm using balance context
 
     const handleChange = (event) => {
+            // Take away success-message from previous transaction as soon as handleChange is reactivated 
+            document.getElementById('success-message').innerHTML = ``;
             if (Number(event.target.value) <= 0) { 
             document.getElementById('error-message').innerHTML = `Oink! Please enter amount above $0.`
-            return setValidTransaction(false);
+            // return setValidTransaction(false); //unneccessary
           } else if (Number(event.target.value) > balance) {
             document.getElementById('error-message').innerHTML = `Oink! Your Piggy Bank doesn't have $${event.target.value}.`
-            return setValidTransaction(false);
+            // return setValidTransaction(false); //unneccessary
           } else {
+            // validTransaction changed to true to enable button. The button is what engages handleSubmit()
             setValidTransaction(true);
-            document.getElementById('error-message').innerHTML = ``;
+            document.getElementById('error-message').innerHTML = ``; //NOT UNneccessary, because otherwise the error message will remain on the page even when you enter a valid ammount.  
           }
+          // once number is validated, a withdraw number is established for use in handleSubmit()
           setWithdraw(Number(event.target.value));
         };
   
 
     const handleSubmit = (event) => {
-      
+      // create a new total from balance (context) and withdraw (state)
       let newTotal = balance - withdraw;
-      // setTotalState(newTotal);
+      // use setBalnce to update balance
       setBalance(newTotal);
+      //  re-disable button
       setValidTransaction(false);
+      // event.preventDefault() keeps your form and submission from being reset as soon as the setBalance(newTotal) is processed. Prevent the form from defaulting so it can fulfill the process. 
       event.preventDefault();
+      // reset for placeholder
       document.getElementById('number-input').value = '';
+      // sucess message
       document.getElementById('success-message').innerHTML = `Success! $${withdraw.toFixed(2)} withdrawn. `;
     };
   
@@ -60,8 +70,9 @@ export default function Withdraw () {
                         <h3 style={{fontFamily: 'Forum, cursive', fontSize: '2.2rem'}}> Withdrawal Amount:</h3>
                         <ATM
                         onChange={handleChange}
-                        isWithdraw={isWithdraw}
+                        // isWithdraw={isWithdraw} // Don't see purpose of this
                         isValid={validTransaction}
+                        // deposit = false make button say Withdraw
                         deposit={false}
                         ></ATM>
                     </div>

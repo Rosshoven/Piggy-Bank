@@ -12,13 +12,17 @@ export const BalanceContext = createContext(null);
 // Note, created the context outside of other components. 
 
 
+
+// Wrote the code to define the context's functionality here, as opposed to defining the context outside this file. 
 export const BalanceProvider = ({ children }) => {
 
 
     const [balance, setBalance] = useState(0);
 
     return (
-        <BalanceContext.Provider value = {{balance, setBalance }}>{children}</BalanceContext.Provider>
+        <BalanceContext.Provider value = {{balance, setBalance }}>
+            {children}
+        </BalanceContext.Provider>
     )
 
 

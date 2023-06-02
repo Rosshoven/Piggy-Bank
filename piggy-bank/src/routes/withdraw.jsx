@@ -20,10 +20,10 @@ export default function Withdraw () {
             document.getElementById('success-message').innerHTML = ``;
             if (Number(event.target.value) <= 0) { 
             document.getElementById('error-message').innerHTML = `Oink! Please enter amount above $0.`
-            // return setValidTransaction(false); //unneccessary
+            return setValidTransaction(false); //NOT UNneccessary because button needs to remain disabled
           } else if (Number(event.target.value) > balance) {
             document.getElementById('error-message').innerHTML = `Oink! Your Piggy Bank doesn't have $${event.target.value}.`
-            // return setValidTransaction(false); //unneccessary
+            return setValidTransaction(false); //NOT UNneccessary because button needs to remain disabled
           } else {
             // validTransaction changed to true to enable button. The button is what engages handleSubmit()
             setValidTransaction(true);

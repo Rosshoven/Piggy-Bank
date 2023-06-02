@@ -1,4 +1,4 @@
-// import React from "react"; not needed in a CRA (I think!)
+// import React from "react";  //not needed in a CRA (I think!)
 
 // Two important react hooks imported
 import { useState, useContext } from "react";
@@ -16,7 +16,8 @@ export default function Deposit() {
     const [deposit, setDeposit] = useState(0);
     // validTransaction-setValidTransaction is used to enable button in the ATM component which uses handleChange() where event.target.value is validated
     const [validTransaction, setValidTransaction] = useState(false);
-    // Bringing in the BalanceContext which is used in handleSubmit().
+    // Bringing in the BalanceContext which is used in handleSubmit(). balance, setBalance is being defined here. 
+    // Here we USE the context
     const {balance, setBalance} = useContext(BalanceContext);
 
     // const isDeposit = true; - I took out this line of code because I don't see its purpose.
@@ -67,7 +68,7 @@ export default function Deposit() {
             
             {/* CARD w/FORM & ATM component*/}
             <form style={{ borderRadius: '5px', width: '30rem', marginRight: 'auto', marginLeft: 'auto', border: '2px solid green'}} 
-            // onSubmit={handleSubmit}
+            // onSubmit={handleSubmit}  //took out and put handleSubmit within the <button> on the ATM component
             >
                  <div className="card">
                     <div className="card-header" style={{fontWeight: 'bold', fontFamily: 'Forum, cursive', fontSize: '2.2rem'}}>

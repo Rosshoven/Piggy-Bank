@@ -3,14 +3,15 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import Pig_Logo from '../images/Pig_Logo.png';
 // import the code for balance context
-import { BalanceContext } from "./balance-context";
+// import { BalanceContext } from "./balance-context";
 import  { useState } from "react";
 // import { AccountContext } from "./account-context";
 // import { Popover } from "bootstrap";
+import { BalanceProvider } from "./balance-context";
 
 export default function Root() {
   // balance state is created and used in Balance Context
-  const [balance, setBalance] = useState(0);
+  // const [balance, setBalance] = useState(0);
 
   // The useStates were created simply to have a pop-up (pop-down) show up with onMouseEnter & go away with onMouseLeave for each link
   const [homeShown, setHomeShown] = useState(false);
@@ -22,8 +23,9 @@ export default function Root() {
 
     return (
       <>
-      {/* Provide the balance throughout all components in the navbar. Must give a value, using useState to update the balanced itself */}
-      <BalanceContext.Provider value={{balance, setBalance}}>
+      {/* Provide the balance throughout all components in the navbar. Must give a value, using useState to update the balance itself */}
+      {/* <BalanceContext.Provider value={{balance, setBalance}}> */}
+      <BalanceProvider>
         <div>
           <nav style={{borderBottom: 'solid 1.5px green', position: 'fixed', width: '100%', backgroundColor: '#ffc4cd', fontFamily: 'Forum, cursive', fontSize: '1.5rem'}} className="nav nav-pills nav-justified navbar navbar-expand-lg navbar-dark sticky-top">
             <div className="container-fluid">
@@ -89,7 +91,7 @@ export default function Root() {
         <div id="detail">
           <Outlet />
         </div>
-      </BalanceContext.Provider>
+      </BalanceProvider>
       </>
     );
   }

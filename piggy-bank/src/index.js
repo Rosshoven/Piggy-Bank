@@ -23,7 +23,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        // the path given for index: will show upon inital load
+        // the path given for index will show upon inital load
         index: 'home',
         element: <Home />
       },
@@ -54,6 +54,7 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    {/* AccountProvider component from account-context, this component returns (<AccountContext.Provider value={{ handleSetAccountData, accounts}}> {children} </AccountContext.Provider>*/} 
     <AccountProvider>
       <RouterProvider router={router} />
     </AccountProvider>

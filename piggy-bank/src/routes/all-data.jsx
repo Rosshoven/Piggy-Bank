@@ -1,10 +1,9 @@
 import { useAccountContext } from "./account-context";
 import Pig_Logo from '../images/Pig_Logo.png';
-// import { useContext } from "react";
-// import addAccount from "./account-context";
 
 export default function AllData() {
-    // take in data from Create Account with useAccountContext
+    // take in data from useAccountContext
+    // this is destrucuring. I will display the accounts data with accounts.map
     const { accounts } = useAccountContext();
    
     // checking to see if accounts are coming through

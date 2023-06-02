@@ -5,9 +5,11 @@ import { useState, useContext } from "react";
 // importing the ATM component
 import ATM from "../ATM";
 // importing the BalanceContext
-import { BalanceContext } from "./balance-context";
+// import { BalanceContext } from "./balance-context";
 // importing images of a piggy bank deposit
 import Pig_Deposit from '../images/Pig_Deposit.jpg';
+
+import { useBalanceContext } from "./balance-context";
 
 
 // Deposit component that processes a deposit 
@@ -18,7 +20,11 @@ export default function Deposit() {
     const [validTransaction, setValidTransaction] = useState(false);
     // Bringing in the BalanceContext which is used in handleSubmit(). balance, setBalance is being defined here. 
     // Here we USE the context
-    const {balance, setBalance} = useContext(BalanceContext);
+    // const {balance, setBalance} = useContext(BalanceContext);
+
+    const {balance, setBalance} = useBalanceContext();
+    
+    
 
     // const isDeposit = true; - I took out this line of code because I don't see its purpose.
 

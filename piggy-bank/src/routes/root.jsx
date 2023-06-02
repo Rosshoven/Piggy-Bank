@@ -7,6 +7,8 @@ import Pig_Logo from '../images/Pig_Logo.png';
 import  { useState } from "react";
 // import { AccountContext } from "./account-context";
 // import { Popover } from "bootstrap";
+
+// import Balance provider 
 import { BalanceProvider } from "./balance-context";
 
 export default function Root() {
@@ -25,6 +27,8 @@ export default function Root() {
       <>
       {/* Provide the balance throughout all components in the navbar. Must give a value, using useState to update the balance itself */}
       {/* <BalanceContext.Provider value={{balance, setBalance}}> */}
+
+      {/* Refactored to understand useContext better. BalanceProvider is defined in the balance-context.jsx */}
       <BalanceProvider>
         <div>
           <nav style={{borderBottom: 'solid 1.5px green', position: 'fixed', width: '100%', backgroundColor: '#ffc4cd', fontFamily: 'Forum, cursive', fontSize: '1.5rem'}} className="nav nav-pills nav-justified navbar navbar-expand-lg navbar-dark sticky-top">

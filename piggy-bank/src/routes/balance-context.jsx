@@ -2,7 +2,7 @@
 // "createContext lets you create a context that components can provide or read."
 // createContext automatically returns an object. key:value system
 // Here we CREATE the context
-import { createContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
 // "calling" createContext to make a BalanceContext with initial value of null, and exporting it
 export const BalanceContext = createContext(null);
@@ -23,3 +23,5 @@ export const BalanceProvider = ({ children }) => {
 
 
 }
+
+export const useBalanceContext = () => useContext(BalanceContext);

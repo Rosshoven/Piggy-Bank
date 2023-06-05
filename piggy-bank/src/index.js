@@ -5,7 +5,6 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import ErrorPage from '../src/error-page';
-import { AccountProvider } from './routes/account-context';
 import AllData from './routes/all-data';
 import CreateAccount from './routes/create-account.jsx';
 import Deposit from './routes/deposit';
@@ -13,7 +12,12 @@ import Home from './routes/home';
 import Root from './routes/root';
 import Withdraw from './routes/withdraw';
 
-// starting to set up my routes
+// imporiting Contexts for router
+import { AccountProvider } from './routes/account-context';
+import { BalanceProvider } from "../src/routes/balance-context";
+
+
+// setting up my routes
 // router is defined as a createBrowserRouter(imported from react-router-dom) with routes I create
 // This is not a navbar. This is the router the navbar uses to go from page to page
 const router = createBrowserRouter([
@@ -55,8 +59,11 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* AccountProvider component from account-context, this component returns (<AccountContext.Provider value={{ handleSetAccountData, accounts}}> {children} </AccountContext.Provider>*/} 
+    {/* Did the same for Balance Provider */}
     <AccountProvider>
+      <BalanceProvider>
       <RouterProvider router={router} />
+      </BalanceProvider>
     </AccountProvider>
   </React.StrictMode>
 );

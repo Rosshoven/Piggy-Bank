@@ -13,7 +13,7 @@ export const BalanceContext = createContext(null);
 
 
 
-// Wrote the code to define the context's functionality here, as opposed to defining the context outside this file. 
+// Write the code to define the context's functionality here, as opposed to defining the context outside this file. 
 export const BalanceProvider = ({ children }) => {
 
 

@@ -1,8 +1,8 @@
-import React from "react";
-import { useState, useContext } from "react";
+// import React from "react"; //not needed in a CRA (I think!)
+import { useState } from "react";
 import ATM from "../ATM";
-import { BalanceContext } from "./balance-context";
 import Pig_Withdraw from "../images/Pig_Withdraw.jpg";
+import {  useBalanceContext  } from "./balance-context";
 
 export default function Withdraw () {
   // withdraw state is used in handlechange where setWithdraw defines the withdrawal amount that is then used in handleSubmit
@@ -10,7 +10,9 @@ export default function Withdraw () {
     // validTransaction-setValidTransaction is used to change the text of the button within the ATM component
     const [validTransaction, setValidTransaction] = useState(false);
     // Bringing in the same BalanceContext so the balance remains the same throughout app.
-    const {balance, setBalance} = useContext(BalanceContext);
+    //  Need the parens() after useBalanceContext, otherewise you're not calling it and balance will be undefined...which will lead to toFixed() not working either. Needs to be useBalanceContext();
+    const {balance, setBalance} = useBalanceContext();
+    // const { balance, setBalance} = useContext(BalanceContext);
   
     // const isWithdraw = true //don't see purpose of this code.
     // let status = `${balance}`; //don't need this because I'm using balance context
@@ -59,19 +61,24 @@ export default function Withdraw () {
             <img style={{width:'70px', height: '70px', borderRadius: '50%', border: 'solid 1px green'}} src={Pig_Withdraw} alt="Pig with Cash" /> 
           </div>
           
-          <form style={{ borderRadius: '5px', width: '30rem', marginRight: 'auto', marginLeft: 'auto', border: '2px solid green'}} onSubmit={handleSubmit}>
+          <form style={{ borderRadius: '5px', width: '30rem', marginRight: 'auto', marginLeft: 'auto', border: '2px solid green'}} 
+          // onSubmit={handleSubmit}
+          >
                 <div className="card">
                     <div className="card-header" style={{fontWeight: 'bold', fontFamily: 'Forum, cursive', fontSize: '2.2rem'}}>
-                     {`Account Balance: $${(balance).toFixed(2)}`}
+                      {`Account Balance: $${(balance).toFixed(2)}`}
                     </div>
-                    <div className="card-body" style={{display: 'flex', flexDirection: 'column', backgroundColor: '#ffd3d9'}}>
+                <div className="card-body" style={{display: 'flex', flexDirection: 'column', backgroundColor: '#ffd3d9'}}>
+
                         <div style={{color: 'green', fontSize: '1.7rem', margin: '3% auto'}} id="success-message"></div>
                         <div style={{color: 'red', }} id="error-message"></div>
                         <h3 style={{fontFamily: 'Forum, cursive', fontSize: '2.2rem'}}> Withdrawal Amount:</h3>
                         <ATM
                         onChange={handleChange}
-                        // isWithdraw={isWithdraw} // Don't see purpose of this
+                        // isWithdraw={isWithdraw} // Don't see purpose of this≈
                         isValid={validTransaction}
+
+                        onClick={handleSubmit}
                         // deposit = false make button say Withdraw
                         deposit={false}
                         ></ATM>

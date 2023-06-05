@@ -8,8 +8,8 @@ import  { useState } from "react";
 // import { AccountContext } from "./account-context";
 // import { Popover } from "bootstrap";
 
-// import Balance provider 
-import { BalanceProvider } from "./balance-context";
+// import Balance provider //commented out because I put provider into index.js
+// import { BalanceProvider } from "./balance-context";
 
 export default function Root() {
   // balance state is created and used in Balance Context
@@ -29,7 +29,7 @@ export default function Root() {
       {/* <BalanceContext.Provider value={{balance, setBalance}}> */}
 
       {/* Refactored to understand useContext better. BalanceProvider is defined in the balance-context.jsx */}
-      <BalanceProvider>
+      {/* <BalanceProvider> */}
         <div>
           <nav style={{borderBottom: 'solid 1.5px green', position: 'fixed', width: '100%', backgroundColor: '#ffc4cd', fontFamily: 'Forum, cursive', fontSize: '1.5rem'}} className="nav nav-pills nav-justified navbar navbar-expand-lg navbar-dark sticky-top">
             <div className="container-fluid">
@@ -95,7 +95,7 @@ export default function Root() {
         <div id="detail">
           <Outlet />
         </div>
-      </BalanceProvider>
+      {/* </BalanceProvider> */}
       </>
     );
   }

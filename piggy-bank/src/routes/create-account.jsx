@@ -10,12 +10,13 @@ import { useAccountContext } from "./account-context";
 function BasicForm() {
     // defining the handleSetAccountData by destructring. Will be imperitive to use to update the accounts, coming from the Account Context so it will be saved.
     const { handleSetAccountData } = useAccountContext();
+
     // useState hook used to display text on the button: Create Another Account' OR 'Create Account'  
     const [createAccountTrue, setCreateAccountTrue] = useState(false);
     // show state sets what is displayed on page: Form or Success message
     const [show, setShow] = useState(true);
 
-    // onSubmit function. "values" is the user information submitted and actions are a long set of methods provided by formik. I end up using resetForm(). The values I pass into the handleSetAccountData function I created in account-context
+    // onSubmit function. "values" is the user information submitted and "actions" are a long set of methods provided by formik. I end up using resetForm(). The values I pass into the handleSetAccountData function that is created in account-context
     async function onSubmit(values, actions) {
         console.log(values);
         console.log(actions);

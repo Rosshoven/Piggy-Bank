@@ -33,3 +33,4 @@ export const AccountProvider = ({ children }) => {
 // Exporting a component that uses AccountContext and its values - handleSetAccountData and accounts
 // This is created for 2 reasons: 1) import { useAccountContext } from "./account-context"; is used in Create Account where accounts are updated, but not displayed. 2) const { accounts } = useAccountContext() in All Data helps use display accounts.
 export const useAccountContext = () => useContext(AccountContext);
+// useAccountContext now has all the values and code that was in .Provider value. 

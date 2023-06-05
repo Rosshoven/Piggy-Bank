@@ -1,7 +1,7 @@
 // import React from "react";  //not needed in a CRA (I think!)
 
-// Two important react hooks imported
-import { useState, useContext } from "react";
+// Two, now 1, important react hooks imported
+import { useState } from "react";
 // importing the ATM component
 import ATM from "../ATM";
 // importing the BalanceContext
